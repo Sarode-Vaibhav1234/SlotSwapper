@@ -14,26 +14,24 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  'http://localhost:5173', 
-  'https://slotswapperproject.vercel.app',  // The origin of your React/Vite frontend
-  // Add your production frontend URL here later
+  'http://localhost:5173',
+  'https://slotswapperproject.vercel.app',
 ];
 
-const corsOptions = {
+
+app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or cURL)
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true, // IMPORTANT: Allows cookies/sessions/authorization headers (like your JWT) to be sent
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
+  credentials: true,
+  methods: ['GET','POST','PUT','DELETE'],
+  allowedHeaders: ['Content-Type','Authorization'],
+}));
 
-app.use(cors(corsOptions));
 
 // Body parser (to parse JSON in request body)
 app.use(express.json());
