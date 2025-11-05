@@ -3,8 +3,11 @@ import axios from 'axios';
 
 // 1. Create an Axios instance
 const api = axios.create({
-  baseURL: "https://slotswapper-2-nogh.onrender.com/api/v1",
-  headers: { "Content-Type": "application/json" },
+  // ** IMPORTANT: Match your backend port and API version **
+  baseURL: 'http://localhost:5000/api/v1', 
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 // 2. Request Interceptor to attach JWT
