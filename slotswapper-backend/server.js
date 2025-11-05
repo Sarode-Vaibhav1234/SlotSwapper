@@ -14,7 +14,8 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  'http://localhost:5173', // The origin of your React/Vite frontend
+  'http://localhost:5173', 
+  'https://slotswapperproject.vercel.app',  // The origin of your React/Vite frontend
   // Add your production frontend URL here later
 ];
 

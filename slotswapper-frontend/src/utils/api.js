@@ -4,7 +4,7 @@ import axios from 'axios';
 // 1. Create an Axios instance
 const api = axios.create({
   // ** IMPORTANT: Match your backend port and API version **
-  baseURL: 'http://localhost:5000/api/v1', 
+  baseURL: 'https://slotswapper-2-nogh.onrender.com', 
   headers: {
     'Content-Type': 'application/json',
   },
